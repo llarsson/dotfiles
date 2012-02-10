@@ -1,0 +1,4 @@
+alias o='gnome-open'
+alias ls='ls --color=auto'
+alias mvnci='mvn clean install'
+alias mvnnt='mvn clean install -Dmaven.test.skip=true'
