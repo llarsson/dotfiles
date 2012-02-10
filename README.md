@@ -14,7 +14,7 @@ Assuming you have no other vim-related configuration, you can simply run the fol
 
     ln -s ~/dotfiles/vim/ ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
-    cd ~/dotfiles/vim/
+    cd ~/dotfiles/
     git submodule update --init
 
 ## bash
