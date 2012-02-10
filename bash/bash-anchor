@@ -1,0 +1,100 @@
+# Anchor and visit script
+# By Daniel Espling and Lars Larsson
+# Usage:
+# 1. Go to a directory
+# 2. Write "anchor foobar"
+# 3. Whenever you want to quickly go to the directory from Step 2 again, write "visit foobar"
+
+#Tabcompletions for Anchor / Visit
+_anchor_visit_tabcomp () {
+    local curw
+        COMPREPLY=()
+        curw=${COMP_WORDS[COMP_CWORD]}
+    for path in `compgen -d ~/.anchors/$curw`; do
+        COMPREPLY=(${COMPREPLY[@]-} $(basename $path))
+            done
+#COMPREPLY=($(compgen -d ~/.anchors/$curw | xargs basename -a))
+            return 0
+}
+
+complete -F _anchor_visit_tabcomp -o dirnames anchor
+complete -F _anchor_visit_tabcomp -o dirnames visit
+
+#Anchor script for creating a directory anchor. '-d' flag removes an anchor
+anchor () {
+  ANCHOR_DIR=~/.anchors/
+
+  if [ ! -d $ANCHOR_DIR ]; then
+    mkdir $ANCHOR_DIR
+  fi
+
+  if [ $# -eq 0 ]; then
+    NAME=default-anchor
+  else
+    NAME=$1
+    if [ $NAME = "-d" ]; then
+        if [ $# -eq 2 ]; then
+            NAME=$2
+            if [ ! -e $ANCHOR_DIR/$NAME ]; then
+                echo "Anchor [${NAME}] not found!"
+                return 1
+            fi
+            unlink $ANCHOR_DIR/$NAME 2> /dev/null
+            echo "Anchor '"$NAME"' removed."
+            return 0
+        else
+            echo "Usage is 'anchor -d <anchor_name_to_remove>"
+            return 1
+        fi
+    fi
+
+    if [ $# -gt 1 ]; then
+      echo "Just supply one anchor name!"
+      return 1
+    fi
+  fi
+
+  unlink $ANCHOR_DIR/$NAME 2> /dev/null
+  ln -s "`pwd -P`" $ANCHOR_DIR/$NAME
+}
+
+#Visit script for visiting anchors. '-p' means print instead of visit, -l means list 
+#TODO: This can be rewritten more nicely to create help, a more neat structure for parsing arguments, etc.
+visit () {
+  ANCHOR_DIR=~/.anchors/
+
+  if [ $# -eq 0 ]; then
+    NAME=default-anchor
+  else
+    #List available anchors
+    if [ $1 = "-l" ] || [ $1 = "--list" ]; then
+      for l in `ls $ANCHOR_DIR`; do
+        echo "$l => [`readlink ${ANCHOR_DIR}/$l`]"
+      done
+      return 0
+    fi
+    #Print anchor path
+    if [ $1 = "-p" ] || [ $1 = "--print" ]; then
+      if [ ! -e $ANCHOR_DIR/$NAME ]; then
+        echo "Anchor [${NAME}] not found!"
+        return 1
+      fi
+      echo "`readlink ${ANCHOR_DIR}/$2`"
+      return 0
+    fi
+    #Print error if illegal arguments
+    NAME=$1
+    if [ $# -gt 1 ]; then
+      echo "Just supply one anchor name!"
+      return 1
+    fi
+  fi
+
+  if [ ! -e $ANCHOR_DIR/$NAME ]; then
+    echo "Anchor [${NAME}] not found!"
+    return 1
+  fi
+
+  cd "`readlink $ANCHOR_DIR/$NAME`"
+}
+

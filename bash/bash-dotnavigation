@@ -1,0 +1,8 @@
+# easier navigation, just write ".." instead of "cd .." and "..." instead of "cd ../..", etc.
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'

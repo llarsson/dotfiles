@@ -1,0 +1,7 @@
+# for all 'something' perform xxxxx
+forall () {
+    PATTERN=$1
+    shift
+    find . -name "$PATTERN" -exec $@ {} \; 2>/dev/null
+}
+

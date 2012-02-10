@@ -3,6 +3,12 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 " -- End Pathogen-related settings
 
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+
+" Make middle mouse paste without formatting
+map <MouseMiddle> <Esc>"*p"
+
 set nocompatible
 
 filetype plugin indent on
