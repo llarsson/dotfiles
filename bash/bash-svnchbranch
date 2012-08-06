@@ -24,7 +24,7 @@ if [ $# -eq 1 ]; then
             FS_PATH=${WD%%$RELATIVE_PATH}
             FS_ROOT=${FS_PATH%%$SOURCE_BRANCH}
 
-            DESTINATION=$FS_ROOT/$DESTINATION_BRANCH/$RELATIVE_PATH
+            DESTINATION=$FS_ROOT$DESTINATION_BRANCH$RELATIVE_PATH
             echo "Switching branch to: $DESTINATION_BRANCH"
             cd $DESTINATION
         fi
