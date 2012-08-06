@@ -81,3 +81,6 @@ function! Mosh_Tab_Or_Complete()
 endfunction
 
 :inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
+
+imap <C-Backspace> <C-o>db
+

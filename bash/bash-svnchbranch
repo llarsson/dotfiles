@@ -1,0 +1,38 @@
+svnchbranch() {
+if [ $# -eq 1 ]; then
+    REPO_ROOT=$(svn info 2>/dev/null | grep 'Repository Root: ' | cut -d ' ' -f 3)
+    REPO_URL=$(svn info 2>/dev/null | grep 'URL: ' | cut -d ' ' -f 2)
+
+    if [ x$REPO_ROOT != "x" ]; then
+        CURRENT_PATH_INDEX=$(expr match "$REPO_URL" "$REPO_ROOT")
+        CURRENT_PATH=${REPO_URL:$CURRENT_PATH_INDEX + 1}
+
+        if [ x$CURRENT_PATH != "x" ]; then
+            DESTINATION_BRANCH=branches/$1
+            if [ $1 == "trunk" ]; then
+                DESTINATION_BRANCH="trunk"
+            fi  
+
+            SOURCE_BRANCH=$(echo $CURRENT_PATH | cut -d '/' -f 1-2)
+            if [ $(expr match "$CURRENT_PATH" "trunk") -eq 5 ]; then
+                SOURCE_BRANCH="trunk"
+            fi  
+
+            RELATIVE_PATH=${CURRENT_PATH#$SOURCE_BRANCH}
+
+            WD=$(pwd)
+            FS_PATH=${WD%%$RELATIVE_PATH}
+            FS_ROOT=${FS_PATH%%$SOURCE_BRANCH}
+
+            DESTINATION=$FS_ROOT/$DESTINATION_BRANCH/$RELATIVE_PATH
+            echo "Switching branch to: $DESTINATION_BRANCH"
+            cd $DESTINATION
+        fi
+    fi
+else
+    echo "usage: svnchbranch branch"
+    echo "  will change into the branch you specified, but with the same relative path "
+    echo "  as you are currently in"
+fi  
+}
+
