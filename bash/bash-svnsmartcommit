@@ -1,0 +1,7 @@
+# from: http://www.mikeball.us/blog/how-exclude-files-from-svn-commits
+function svnsmartcommit() {
+    svn stat > /tmp/svn_commits.tmp
+    vim /tmp/svn_commits.tmp
+    svn commit `cat /tmp/svn_commits.tmp | cut -d' ' -f2- | xargs`
+    rm -f /tmp/svn_commits.tmp
+}
