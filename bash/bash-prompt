@@ -1,1 +1,28 @@
-export PS1='\n\[\033[01;36m\]\d \t :: \w\[\033[00m\]\n\[\033[01;32m\]\u@\h \W\[\033[00m\] $ '
+# thanks to glamdringlfo on stackoverflow:
+# http://stackoverflow.com/questions/103857/what-is-your-favorite-bash-prompt
+
+function exitstatus {
+
+    EXITSTATUS="$?"
+    BOLD="\[\033[1m\]"
+    RED="\[\033[1;31m\]"
+    GREEN="\[\e[32;1m\]"
+    BLUE="\[\e[34;1m\]"
+    OFF="\[\033[m\]"
+
+    #PROMPT="[\u@\h ${BLUE}\W${OFF}"
+    PROMPT="\n${BOLD}\d \t :: \w${OFF}\n${GREEN}\u@\h \W${OFF} \$ "
+
+    if [ "${EXITSTATUS}" -eq 0 ]
+    then
+       PS1="${PROMPT}"
+    else
+       PS1="${BOLD}${RED}exit code :: ${EXITSTATUS}${OFF}${PROMPT}"
+    fi
+
+    PS2="${BOLD}>${OFF} "
+}
+
+PROMPT_COMMAND=exitstatus
+
+#export PS1='\n\[\033[01;36m\]\d \t :: \w\[\033[00m\]\n\[\033[01;32m\]\u@\h \W\[\033[00m\] $ '
