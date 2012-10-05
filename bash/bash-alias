@@ -1,4 +1,9 @@
-alias o='gnome-open'
-alias ls='ls --color=auto'
+if [ $(uname) == 'Darwin' ]; then 
+    alias ls='ls -G'
+    alias o='open'
+else
+    alias ls='ls --color=auto'
+    alias o='xdg-open'
+fi
 alias mvnci='mvn clean install'
 alias mvnnt='mvn clean install -Dmaven.test.skip=true'
