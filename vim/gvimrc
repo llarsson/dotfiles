@@ -1,0 +1,4 @@
+set lines=48
+colors default
+set autochdir
+set guifont=Terminus

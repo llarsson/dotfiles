@@ -1,0 +1,15 @@
+bindkey -k k7 prev
+bindkey -k k8 next
+bindkey -k k9 title
+bindkey -k k5 screen
+bindkey -k k2 detach
+msgwait 3
+sorendition 04 43
+#hardstatus alwayslastline "%l | %D %M %d %c | %-w %{+r} %n %t %{-} %+w"
+hardstatus alwayslastline "%H | %-w %{+r} %n %t %{-} %+w %= | %D %M %d %c"
+vbell on
+defscrollback 1024
+startup_message off
+defutf8 off
+# enable scroll wheel
+termcapinfo xterm|xterms|xs|rxvt ti@:te@

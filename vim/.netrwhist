@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/slowscratch/version-controlled/cloud/branches/ticket.219/elastiscale/tests/database.load.test/src/test/resources'
+let g:netrw_dirhist_2='/slowscratch/version-controlled/cloud/branches/ticket.219/libs/karaf.platform.libs'
