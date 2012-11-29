@@ -43,8 +43,6 @@ if &term =~ "xterm"
   set t_Sb=[4%dm
 endif
 
-set background=dark
-
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
@@ -80,7 +78,10 @@ function! Mosh_Tab_Or_Complete()
         return "\<Tab>"
 endfunction
 
-:inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
+inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
 
 imap <C-Backspace> <C-o>db
 
+" solarized theme
+set background=light
+colorscheme solarized
