@@ -1,5 +1,6 @@
 set lines=48
 set autochdir
-set guifont=Terminus
-set background=light
+set guifont=Ubuntu\ Mono\ 12
+set background=dark
 colorscheme solarized
+set guicursor=a:blinkon0
