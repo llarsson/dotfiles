@@ -4,6 +4,8 @@ call pathogen#infect()
 " -- End Pathogen-related settings
 set nocompatible
 
+let mapleader = "\\"
+
 " Make middle mouse paste without formatting
 map <MouseMiddle> <Esc>"*p"
 
@@ -53,6 +55,14 @@ au BufRead,BufNewFile *.py,*pyw,*.html,*.js set shiftwidth=4
 " Makes powerline work (nicely)
 set laststatus=2
 let g:Powerline_stl_path_style = 'short'
+
+" NERDTree settings
+" Show NERDTree if no file was given
+autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim if all that is left is a NERDTree window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+nnoremap <leader>t <C-o>:NERDTree<CR>
+
 
 " Don't suggest the following when looking for files to open
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.eps,.ps,.pdf
