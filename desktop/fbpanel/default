@@ -375,7 +375,7 @@ Plugin {
     type = tclock
     config {
         # 2 line view, time in bold above and date below
-        ClockFmt = <span font="Sans 8"><b>%-l:%M</b> %P&#xA;%a %B %-e</span>
+        ClockFmt = <span font="Sans 8"><b>%H:%M</b> %P&#xA;%a %B %-e</span>
         TooltipFmt = %A %x
         #Action = xmessage Please define some command &
         ShowCalendar = true
