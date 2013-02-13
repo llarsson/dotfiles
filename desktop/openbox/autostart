@@ -1,0 +1,38 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+
+# RXVT unicode deamon
+urxvtd -f -o &
+
+# My X defaults
+xrdb ~/.Xdefaults &
+
+# A panel with task list and stuff is nice...
+fbpanel &
+
+# alsamixer in X
+volumeicon &
+
+# key maps
+setxkbmap -option grp:switch,grp:shift_toggle,grp_led:scroll us,se -variant 'altgr-intl,' -option nodeadkeys
+
+# xscreensaver!
+xscreensaver -nosplash &
+
+# left-handed mouse
+xmodmap -e 'pointer = 3 2 1' &
