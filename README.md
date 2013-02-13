@@ -8,6 +8,11 @@ These are the dotfiles that I always want present on any machines I work with, s
 
 You now have the dotfiles directory/git repository in your home folder.
 
+To update all submodules, e.g. vim plugins, run the following command once a month or so:
+
+    cd ~/dotfiles
+    git submodule foreach git pull origin master
+
 ## vim
 
 Assuming you have no other vim-related configuration, you can simply run the following commands:
