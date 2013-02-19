@@ -835,11 +835,11 @@
     </application>
     <application class="Skype">
         <desktop>2</desktop>
+        <layer>above</layer>
     </application>
 
     <application class="Eclipse">
         <desktop>3</desktop>
     </application>
-    
-  </applications>
+</applications>
 </openbox_config>
