@@ -29,7 +29,7 @@ fbpanel &
 volumeicon &
 
 # key maps
-setxkbmap -option grp:switch,grp:shift_toggle,grp_led:scroll us,se -variant 'altgr-intl,' -option nodeadkeys
+setxkbmap -option grp:switch,grp:shift_toggle,grp_led:scroll us,se -variant 'altgr-intl,' -option nodeadkeys -option caps:escape
 
 # xscreensaver!
 xscreensaver -nosplash &
