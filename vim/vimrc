@@ -12,8 +12,6 @@ map <MouseMiddle> <Esc>"*p"
 filetype plugin indent on
 syntax on
 
-set backspace=indent,eol,start
-
 " Always work with logical lines, rather than screen lines
 set linebreak
 set textwidth=0
