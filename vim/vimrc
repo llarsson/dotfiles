@@ -93,3 +93,6 @@ colorscheme solarized
 " Easier to hit keys for start/end of line
 nnoremap H ^
 nnoremap L $
+
+" Persistent undo files should not clutter our directories
+set undodir^=~/.vim/undo
