@@ -16,14 +16,20 @@
 #
 #xfce-mcs-manager &
 
-# RXVT unicode deamon
-urxvtd -f -o &
+# Thunar in daemon mode
+thunar --daemon &
 
 # My X defaults
 xrdb ~/.Xdefaults &
 
 # A panel with task list and stuff is nice...
-fbpanel &
+tint2 &
+
+# Desktop background
+feh --bg-scale ~/Pictures/current-background
+
+# nerdy info on desktop
+conky &
 
 # alsamixer in X
 volumeicon &

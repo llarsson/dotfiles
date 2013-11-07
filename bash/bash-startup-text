@@ -1,0 +1,8 @@
+# Display a fortune cookie if we are running interactively
+if [ -n "$PS1" ]; then
+    fortune
+    echo 
+    echo ================================
+    echo 
+    pal -r 7 -x 14
+fi
