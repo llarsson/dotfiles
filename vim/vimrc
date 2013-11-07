@@ -12,8 +12,6 @@ map <MouseMiddle> <Esc>"*p"
 filetype plugin indent on
 syntax on
 
-set backspace=indent,eol,start
-
 " Always work with logical lines, rather than screen lines
 set linebreak
 set textwidth=0
@@ -75,19 +73,26 @@ if &term =~ "xterm"
 endif
 
 " in normal mode: ^N twice toggles line numbers
-nmap <C-N><C-N> :set invnumber <CR> 
+nnoremap <C-N><C-N> :set invnumber <CR> 
 
 " -- Begin simple arrow navigation
-imap <buffer> <Up> <C-O>gk
-imap <buffer> <Down> <C-O>gj
+inoremap <buffer> <Up> <C-O>gk
+inoremap <buffer> <Down> <C-O>gj
 
-nmap <buffer> <Up> gk
-nmap <buffer> <Down> gj
+nnoremap <buffer> <Up> gk
+nnoremap <buffer> <Down> gj
 
-vmap <buffer> <Up> gk
-vmap <buffer> <Down> gj
+vnoremap <buffer> <Up> gk
+vnoremap <buffer> <Down> gj
 " -- End simple arrow navigation
 
 " solarized theme
 set background=dark
 colorscheme solarized
+
+" Easier to hit keys for start/end of line
+nnoremap H ^
+nnoremap L $
+
+" Persistent undo files should not clutter our directories
+set undodir^=~/.vim/undo
