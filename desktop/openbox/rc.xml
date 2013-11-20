@@ -178,49 +178,49 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
-    <keybind key="C-A-Left">
+    <keybind key="W-h">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Right">
+    <keybind key="W-l">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Up">
+    <keybind key="W-k">
       <action name="GoToDesktop">
         <to>up</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Down">
+    <keybind key="W-j">
       <action name="GoToDesktop">
         <to>down</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-S-Left">
+    <keybind key="W-S-h">
       <action name="SendToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-S-Right">
+    <keybind key="W-S-l">
       <action name="SendToDesktop">
         <to>right</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-S-Up">
+    <keybind key="W-S-k">
       <action name="SendToDesktop">
         <to>up</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-S-Down">
+    <keybind key="W-S-j">
       <action name="SendToDesktop">
         <to>down</to>
         <wrap>no</wrap>
@@ -273,14 +273,6 @@
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
-    <keybind key="A-F4">
-      <action name="Close"/>
-    </keybind>
-    <keybind key="A-space">
-      <action name="ShowMenu">
-        <menu>client-menu</menu>
-      </action>
-    </keybind>
     <!-- Take a screenshot of the current window with gnome-screenshot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
@@ -317,6 +309,13 @@
         </finalactions>
       </action>
     </keybind>
+    <!-- Toggle maximized/minimized state -->
+    <keybind key="W-m">
+        <action name="ToggleMaximize" />
+    </keybind>
+    <keybind key="W-n">
+        <action name="Iconify" />
+    </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows">
@@ -346,12 +345,21 @@
     </keybind>
     <keybind key="W-Return">
       <action name="Execute">
-        <command>xfce4-terminal</command>
+          <startupnotify>
+              <enabled>true</enabled>
+              <name>Terminal</name>
+          </startupnotify>
+          <command>xfce4-terminal</command>
       </action>
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
         <command>skippy-xd</command>
+      </action>
+    </keybind>
+    <keybind key="W-v">
+      <action name="Execute">
+        <command>gvim</command>
       </action>
     </keybind>
     <keybind key="W-r">
@@ -366,10 +374,10 @@
     </keybind>
     <keybind key="W-c">
       <action name="Execute">
-        <command>gvim ~/.pal/calendar.pal</command>
+        <command>gvim ~/.pal/work.pal</command>
       </action>
     </keybind>
-    <keybind key="C-A-l">
+    <keybind key="W-l">
       <action name="Execute">
         <command>xscreensaver-command -lock</command>
       </action>
@@ -850,6 +858,9 @@
     </application>
     <application class="Eclipse">
       <desktop>3</desktop>
+    </application>
+    <application name="xfce4-terminal">
+        <decor>no</decor>
     </application>
   </applications>
 </openbox_config>
