@@ -42,3 +42,7 @@ xscreensaver -nosplash &
 
 # left-handed mouse
 xmodmap -e 'pointer = 3 2 1' &
+
+# always run...
+firefox &
+
