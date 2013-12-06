@@ -1,0 +1,23 @@
+# General
+set alias_file=~/.mutt/aliases
+source $alias_file
+set header_cache=~/.mutt/cache
+set message_cachedir=~/.mutt/cache
+#set hdrs # Allow custom headers
+
+# Index settings
+set sort = 'threads'
+
+# Pager settings
+set tilde # fill out bottom of screen with tildes, like vim
+set pager_context=5 # leave 5 lines of context on page down, easier to read
+set pager_stop # never advance to next unread when space is hit
+bind pager <up> previous-line # arrow keys for scrolling
+bind pager <down> next-line # arrow keys for scrollinge
+set editor=vim # duh...
+auto_view text/html # view html automatically
+alternative_order text/plain text/enriched text/html # save html for last
+
+# IMAP settings
+set mail_check = 30 # check messages every 30 seconds
+
