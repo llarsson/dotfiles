@@ -1,8 +1,13 @@
+filetype off
 " -- Begin Pathogen-related settings
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
+call pathogen#helptags()
 " -- End Pathogen-related settings
 set nocompatible
+
+" The one true encoding!
+set encoding=utf-8
 
 let mapleader = "\\"
 
@@ -96,3 +101,13 @@ nnoremap L $
 
 " Persistent undo files should not clutter our directories
 set undodir^=~/.vim/undo
+
+" Fugitive keys
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+
+" Running pylint for every write gets annoying, fast
+let g:pymode_lint_write = 0
+let g:pymode_syntax_highlight_self = 1
+nnoremap <Leader>pl :PyLint<CR>
