@@ -37,7 +37,7 @@ I use Openbox as window manager, and a host of other programs to supply my prefe
 
     openbox obconf feh firefox xfce4-terminal thunar tint2 skippy-xd conky \
     pal volumeicon-alsa xscreensaver gnome-keyring gnupg-agent mutt menu   \
-    vim-gtk w3m xdg-utils openssh-client htop xinit
+    vim-gtk w3m xdg-utils openssh-client htop xinit ttf-ubuntu-font-family
 
 Installing these packages on a pure Ubuntu server install (or some other minimal Ubuntu install, such as one from the network installer) will pull in all of xorg as well, so the environment you end up with will be usable from the start. You may also want to install e.g. `xdm` to have your computer boot into graphical mode.
 
