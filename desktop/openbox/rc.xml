@@ -349,7 +349,7 @@
           <enabled>true</enabled>
           <name>Terminal</name>
         </startupnotify>
-        <command>xfce4-terminal</command>
+        <command>xfce4-terminal --geometry 100x40</command>
       </action>
     </keybind>
     <keybind key="W-s">
