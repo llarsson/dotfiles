@@ -114,3 +114,9 @@ nnoremap <Leader>pl :PyLint<CR>
 
 " Jump to definition of a Python thing
 nnoremap <Leader>pj :RopeGotoDefinition<CR>
+
+" Moving between splits is easier this way
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
