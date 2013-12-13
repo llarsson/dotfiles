@@ -111,3 +111,6 @@ nnoremap <Leader>gd :Gdiff<CR>
 let g:pymode_lint_write = 0
 let g:pymode_syntax_highlight_self = 1
 nnoremap <Leader>pl :PyLint<CR>
+
+" Jump to definition of a Python thing
+nnoremap <Leader>pj :RopeGotoDefinition<CR>
