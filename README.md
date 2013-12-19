@@ -36,7 +36,7 @@ Whether you already have bash-related configuration or not, add the following to
 I use Openbox as window manager, and a host of other programs to supply my preferred GUI experience. Using your package manager, ensure that you have the following programs installed (the names of the programs are given as the packages are called in Ubuntu, to allow for easy copying and pasting to an apt-get install command):
 
     openbox obconf feh firefox xfce4-terminal thunar tint2 skippy-xd conky \
-    pal volumeicon-alsa xscreensaver gnome-keyring gnupg-agent mutt menu   \
+    pal volumeicon-alsa xscreensaver gnupg-agent mutt menu   \
     vim-gtk w3m xdg-utils openssh-client htop xinit ttf-ubuntu-font-family \
     gmrun ack-grep tree ttf-dejavu fortune
 
