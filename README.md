@@ -56,6 +56,6 @@ Set up your symlinks accordingly:
     ln -s ~/dotfiles/mutt/muttrc-shared ~/.mutt
     mkdir ~/.themes
     ln -s ~/dotfiles/desktop/openbox-themes/openbox-clarity/ ~/.themes
-    ln -s ~/dotfiles/desktop/xfce4-terminal/terminalrc ~/.config/Terminal
+    cp ~/dotfiles/desktop/xfce4-terminal/terminalrc ~/.config/Terminal # will be overwritten by xfce4-terminal
 
 ...and your super nerdy desktop should be ready for you. On a fresh Ubuntu 12.04 install, you will see that this desktop uses about 100 megabytes of memory when loaded, and it is about as fast and lean as a Linux desktop gets.
