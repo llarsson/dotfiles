@@ -54,5 +54,7 @@ Set up your symlinks accordingly:
     ln -s ~/dotfiles/desktop/conky/conkyrc ~/.conkyrc
     mkdir ~/.mutt
     ln -s ~/dotfiles/mutt/muttrc-shared ~/.mutt
+    mkdir ~/.themes
+    ln -s ~/dotfiles/desktop/openbox-themes/openbox-clarity/ ~/.themes
 
 ...and your super nerdy desktop should be ready for you. On a fresh Ubuntu 12.04 install, you will see that this desktop uses about 100 megabytes of memory when loaded, and it is about as fast and lean as a Linux desktop gets.
