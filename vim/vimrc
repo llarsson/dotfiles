@@ -66,16 +66,8 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nnoremap <leader>t <C-o>:NERDTree<CR>
 
-
 " Don't suggest the following when looking for files to open
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.eps,.ps,.pdf
-
-set term=xterm
-if &term =~ "xterm"
-  set t_Co=16
-  set t_Sf=[3%dm
-  set t_Sb=[4%dm
-endif
 
 " in normal mode: ^N twice toggles line numbers
 nnoremap <C-N><C-N> :set invnumber <CR> 
@@ -93,7 +85,8 @@ vnoremap <buffer> <Down> gj
 
 " solarized theme
 set background=dark
-colorscheme solarized
+set t_Co=256
+colorscheme distinguished
 
 " Easier to hit keys for start/end of line
 nnoremap H ^

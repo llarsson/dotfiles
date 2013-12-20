@@ -7,3 +7,6 @@ else
 fi
 alias mvnci='mvn clean install'
 alias mvnnt='mvn clean install -Dmaven.test.skip=true'
+
+# start vim without X support, much faster
+alias vim='vim -X'
