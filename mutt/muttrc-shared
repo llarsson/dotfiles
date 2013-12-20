@@ -5,6 +5,11 @@ set header_cache=~/.mutt/cache
 set message_cachedir=~/.mutt/cache
 #set hdrs # Allow custom headers
 
+# Forwarding should include attachments
+set mime_forward=yes 
+set mime_forward_rest=yes
+
+
 # Index settings
 set sort = 'threads'
 
