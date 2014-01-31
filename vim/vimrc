@@ -1,21 +1,18 @@
+" obvious stuff like pathogen {{{
 filetype off
-" -- Begin Pathogen-related settings
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
-" -- End Pathogen-related settings
 set nocompatible
+filetype plugin indent on
+syntax on
+" }}}
 
 " The one true encoding!
 set encoding=utf-8
 
-let mapleader = "\\"
+set spell
 
-" Make middle mouse paste without formatting
-map <MouseMiddle> <Esc>"*p"
-
-filetype plugin indent on
-syntax on
 
 " Always work with logical lines, rather than screen lines
 set linebreak
@@ -36,87 +33,82 @@ set incsearch
 " Write when switching to another file (not on tab change, of course)
 set autowrite
 
-" Old indentation settings, testing new ones
-"set autoindent
-"set tabstop=4
-"set softtabstop=4
-"set shiftwidth=4
-"set smarttab 
-"set expandtab 
-
+" Indentation {{{
 " Emacs-like indentation settings
 " (http://stackoverflow.com/questions/4085411/vim-indent-like-emacs)
-set expandtab " will convert tabs to spaces
-set autoindent " will keep indentation level from previous line
-set shiftwidth=4 " will affect block indentation with >> and <<
-set softtabstop=4 " sets the length of soft tab in spaces
-set tabstop=8 " sets the width of tab character
+set expandtab       " will convert tabs to spaces
+set autoindent      " will keep indentation level from previous line
+set shiftwidth=4    " will affect block indentation with >> and <<
+set softtabstop=4   " sets the length of soft tab in spaces
+set tabstop=8       " sets the width of tab character
+" }}}
 
-" Set shiftwidth to 4 spaces for certain file types
-au BufRead,BufNewFile *.py,*pyw,*.html,*.js set shiftwidth=4
+" I only like particular folds, so only ones that I have asked for
+set foldmethod=marker
+
 
 " Makes powerline work (nicely)
 set laststatus=2
 let g:Powerline_stl_path_style = 'short'
 
-" NERDTree settings
+let mapleader = "\\"
+
+" NERDTree settings {{{
 " Show NERDTree if no file was given
 autocmd vimenter * if !argc() | NERDTree | endif
 " Close vim if all that is left is a NERDTree window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nnoremap <leader>t <C-o>:NERDTree<CR>
-
+" }}}
 
 " Don't suggest the following when looking for files to open
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.eps,.ps,.pdf
-
-set term=xterm
-if &term =~ "xterm"
-  set t_Co=16
-  set t_Sf=[3%dm
-  set t_Sb=[4%dm
-endif
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.eps,.ps,.pdf,.pyc
 
 " in normal mode: ^N twice toggles line numbers
 nnoremap <C-N><C-N> :set invnumber <CR> 
 
-" -- Begin simple arrow navigation
-inoremap <buffer> <Up> <C-O>gk
-inoremap <buffer> <Down> <C-O>gj
-
-nnoremap <buffer> <Up> gk
-nnoremap <buffer> <Down> gj
-
-vnoremap <buffer> <Up> gk
-vnoremap <buffer> <Down> gj
-" -- End simple arrow navigation
-
-" solarized theme
+" color scheme {{{
 set background=dark
-colorscheme solarized
+set t_Co=256
+colorscheme distinguished
+" }}}
 
 " Easier to hit keys for start/end of line
 nnoremap H ^
 nnoremap L $
 
 " Persistent undo files should not clutter our directories
-set undodir^=~/.vim/undo
+set undodir=~/.vim/undo
 
 " Fugitive keys
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 
-" Running pylint for every write gets annoying, fast
+" PyLint settings {{{
 let g:pymode_lint_write = 0
 let g:pymode_syntax_highlight_self = 1
 nnoremap <Leader>pl :PyLint<CR>
+" }}}
 
 " Jump to definition of a Python thing
 nnoremap <Leader>pj :RopeGotoDefinition<CR>
 
-" Moving between splits is easier this way
+" Change active split {{{
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" }}}
+
+" Since vim is my mail editor, it needs settings!
+autocmd FileType mail call SetMailOptions()
+
+function SetMailOptions()
+    set spell
+    set spelllang=en,sv
+    set textwidth=0
+    " Should not need to set textwidth explicitly, but I do
+    set formatoptions=qawn1
+    " see fm-table for help on the format options above
+endfunction

@@ -2,5 +2,5 @@ set lines=48
 set autochdir
 set guifont=Ubuntu\ Mono\ 12
 set background=dark
-colorscheme solarized
+colorscheme distinguished
 set guicursor=a:blinkon0
