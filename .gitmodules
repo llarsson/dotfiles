@@ -36,4 +36,4 @@
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/vim-distinguished"]
 	path = vim/bundle/vim-distinguished
-	url = https://github.com/Lokaltog/vim-distinguished
+	url = https://github.com/Lokaltog/vim-distinguished.git
