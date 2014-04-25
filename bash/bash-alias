@@ -10,3 +10,5 @@ alias mvnnt='mvn clean install -Dmaven.test.skip=true'
 
 # start vim without X support, much faster
 alias vim='vim -X'
+
+alias tmux="TERM=screen-256color tmux"

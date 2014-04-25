@@ -6,6 +6,7 @@ call pathogen#helptags()
 set nocompatible
 filetype plugin indent on
 syntax on
+runtime! plugin/sensible.vim
 " }}}
 
 " The one true encoding!
@@ -37,7 +38,7 @@ set autowrite
 " Emacs-like indentation settings
 " (http://stackoverflow.com/questions/4085411/vim-indent-like-emacs)
 set expandtab       " will convert tabs to spaces
-set autoindent      " will keep indentation level from previous line
+" set autoindent      " will keep indentation level from previous line
 set shiftwidth=4    " will affect block indentation with >> and <<
 set softtabstop=4   " sets the length of soft tab in spaces
 set tabstop=8       " sets the width of tab character
@@ -91,6 +92,11 @@ let g:pymode_syntax_highlight_self = 1
 nnoremap <Leader>pl :PyLint<CR>
 " }}}
 
+let g:snips_author = 'Lars Larsson'
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
+
 " Jump to definition of a Python thing
 nnoremap <Leader>pj :RopeGotoDefinition<CR>
 
@@ -100,6 +106,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " }}}
+
 
 " Since vim is my mail editor, it needs settings!
 autocmd FileType mail call SetMailOptions()
