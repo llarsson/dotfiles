@@ -12,8 +12,8 @@ runtime! plugin/sensible.vim
 " The one true encoding!
 set encoding=utf-8
 
+" Typically, I want spell checking on
 set spell
-
 
 " Always work with logical lines, rather than screen lines
 set linebreak
@@ -34,44 +34,19 @@ set incsearch
 " Write when switching to another file (not on tab change, of course)
 set autowrite
 
-" Indentation {{{
-" Emacs-like indentation settings
-" (http://stackoverflow.com/questions/4085411/vim-indent-like-emacs)
-set expandtab       " will convert tabs to spaces
-" set autoindent      " will keep indentation level from previous line
-set shiftwidth=4    " will affect block indentation with >> and <<
-set softtabstop=4   " sets the length of soft tab in spaces
-set tabstop=8       " sets the width of tab character
-" }}}
-
 " I only like particular folds, so only ones that I have asked for
 set foldmethod=marker
 
-
-" Makes powerline work (nicely)
-set laststatus=2
-let g:Powerline_stl_path_style = 'short'
-
+" Glorious leader
 let mapleader = "\\"
-
-" NERDTree settings {{{
-" Show NERDTree if no file was given
-autocmd vimenter * if !argc() | NERDTree | endif
-" Close vim if all that is left is a NERDTree window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-nnoremap <leader>t <C-o>:NERDTree<CR>
-" }}}
 
 " Don't suggest the following when looking for files to open
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.eps,.ps,.pdf,.pyc
 
-" in normal mode: ^N twice toggles line numbers
-nnoremap <C-N><C-N> :set invnumber <CR> 
-
 " color scheme {{{
 set background=dark
 set t_Co=256
-colorscheme distinguished
+colorscheme elflord
 " }}}
 
 " Easier to hit keys for start/end of line
@@ -91,11 +66,6 @@ let g:pymode_lint_write = 0
 let g:pymode_syntax_highlight_self = 1
 nnoremap <Leader>pl :PyLint<CR>
 " }}}
-
-let g:snips_author = 'Lars Larsson'
-imap <C-J> <Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
-
 
 " Jump to definition of a Python thing
 nnoremap <Leader>pj :RopeGotoDefinition<CR>
