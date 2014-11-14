@@ -29,7 +29,7 @@ tint2 &
 feh --bg-scale ~/Pictures/current-background
 
 # nerdy info on desktop
-conky &
+# conky &
 
 # alsamixer in X
 volumeicon &
@@ -41,8 +41,9 @@ setxkbmap -option grp:switch,grp:shift_toggle,grp_led:scroll us,se -variant 'alt
 xscreensaver -nosplash &
 
 # left-handed mouse
-xmodmap -e 'pointer = 3 2 1' &
+# xmodmap -e 'pointer = 1 2 3' &
 
 # always run...
 firefox &
+thunderbird &
 

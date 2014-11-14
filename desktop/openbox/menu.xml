@@ -27,7 +27,21 @@
     <action name="Restart" />
   </item>
   <separator />
-  <item label="Exit">
+  <menu id="power" label="Power management">
+    <item label="Suspend">
+      <action name="Execute">
+        <execute>dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend</execute>
+        <prompt>Are you sure you want to suspend to RAM?</prompt>
+      </action>
+    </item>
+    <item label="Hibernate">
+      <action name="Execute">
+        <execute>dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate</execute>
+        <prompt>Are you sure you want to hibernate to disk?</prompt>
+      </action>
+    </item>
+  </menu>
+  <item label="Log out">
     <action name="Exit" />
   </item>
 </menu>
