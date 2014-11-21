@@ -6,18 +6,18 @@
 
 # If you want to use GNOME config tools...
 #
-#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
-#  /usr/lib/openbox/gnome-settings-daemon &
-#elif which gnome-settings-daemon >/dev/null; then
-#  gnome-settings-daemon &
-#fi
+# if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#   /usr/lib/openbox/gnome-settings-daemon &
+# elif which gnome-settings-daemon >/dev/null; then
+#   gnome-settings-daemon &
+# fi
 
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
 
 # Thunar in daemon mode
-thunar --daemon &
+# thunar --daemon &
 
 # My X defaults
 xrdb ~/.Xdefaults &
@@ -41,7 +41,7 @@ setxkbmap -option grp:switch,grp:shift_toggle,grp_led:scroll us,se -variant 'alt
 xscreensaver -nosplash &
 
 # left-handed mouse
-# xmodmap -e 'pointer = 1 2 3' &
+xmodmap -e 'pointer = 3 2 1' &
 
 # always run...
 firefox &
