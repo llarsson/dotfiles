@@ -1,6 +1,5 @@
 set lines=48
-set autochdir
-set guifont=Ubuntu\ Mono\ 11
+set guifont=Ubuntu\ Mono\ 12
 set background=dark
-colorscheme distinguished
+colorscheme slate
 set guicursor=a:blinkon0
