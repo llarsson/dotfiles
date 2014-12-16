@@ -44,9 +44,10 @@ let mapleader = "\\"
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.eps,.ps,.pdf,.pyc
 
 " color scheme {{{
-set background=dark
+set background=light
 set t_Co=256
-colorscheme elflord
+let g:solarized_termcolors=256
+colorscheme solarized
 " }}}
 
 " Easier to hit keys for start/end of line
