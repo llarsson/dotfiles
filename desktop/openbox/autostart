@@ -35,7 +35,7 @@ feh --bg-scale ~/Pictures/current-background
 volumeicon &
 
 # key maps
-setxkbmap -option grp:switch,grp:shift_toggle,grp_led:scroll us,se -variant 'altgr-intl,' -option nodeadkeys -option caps:escape
+setxkbmap -option grp:switch,grp:shift_toggle,grp_led:scroll us,se -variant 'altgr-intl,' -option nodeadkeys -option caps:escape -option "lv3:ralt_switch"
 
 # xscreensaver!
 xscreensaver -nosplash &
