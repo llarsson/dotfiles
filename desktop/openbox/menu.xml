@@ -7,7 +7,7 @@
 
 <menu id="root-menu" label="Openbox 3">
   <item label="Terminal emulator">
-    <action name="Execute"><execute>x-terminal-emulator</execute></action>
+    <action name="Execute"><execute>xterm</execute></action>
   </item>
   <item label="Web browser">
     <action name="Execute"><execute>x-www-browser</execute></action>
