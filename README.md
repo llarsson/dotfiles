@@ -35,10 +35,10 @@ Whether you already have bash-related configuration or not, add the following to
 
 I use Openbox as window manager, and a host of other programs to supply my preferred GUI experience. Using your package manager, ensure that you have the following programs installed (the names of the programs are given as the packages are called in Ubuntu, to allow for easy copying and pasting to an apt-get install command):
 
-    openbox obconf feh firefox xfce4-terminal thunar tint2 conky \
-    pal volumeicon-alsa xscreensaver gnupg-agent mutt menu   \
+    openbox obconf feh firefox xterm thunar tint2 \
+    volumeicon-alsa xscreensaver gnupg-agent mutt menu   \
     vim-gtk w3m xdg-utils openssh-client htop xinit ttf-ubuntu-font-family \
-    gmrun ack-grep tree ttf-dejavu fortune
+    gmrun ack-grep tree ttf-dejavu fortune xfonts-terminus
 
 Installing these packages on a pure Ubuntu server install (or some other minimal Ubuntu install, such as one from the network installer) will pull in all of xorg as well, so the environment you end up with will be usable from the start. You may also want to install e.g. `xdm` to have your computer boot into graphical mode.
 
@@ -48,7 +48,7 @@ Set up your symlinks accordingly:
 
     ln -s ~/dotfiles/desktop/openbox ~/.config/
     ln -s ~/dotfiles/desktop/tint2 ~/.config/
-    ln -s ~/dotfiles/desktop/conky/conkyrc ~/.conkyrc
+    ln -s ~/dotfiles/desktop/Xresources ~/.Xresources
     mkdir ~/.mutt
     ln -s ~/dotfiles/mutt/muttrc-shared ~/.mutt
     mkdir ~/.themes
