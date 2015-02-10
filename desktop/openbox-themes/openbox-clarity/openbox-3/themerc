@@ -1,5 +1,6 @@
 !! Original Onyx by Dana Jansens | Mod Onyx-black by AquaFox
 !! inspired by "Carbon" by p0ng, and the ever so popular Vista glass look
+!! No window decorations and clear borders mod by llarsson
 
 !! Menu background
 menu.items.bg: flat gradient vertical
@@ -64,7 +65,7 @@ window.inactive.button.*.image.color: #747474
 
 !! Borders
 window.active.border.color: #EE4000
-window.inactive.border.color: #181818
+window.inactive.border.color: #00AEEE
 window.inactive.title.separator.color: #181818
 border.width: 3
 padding.width: 2
