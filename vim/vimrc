@@ -45,7 +45,7 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 
 " color scheme {{{
 set background=dark
-colorscheme base16-default
+colorscheme base16-twilight
 " }}}
 
 " Easier to hit keys for start/end of line
