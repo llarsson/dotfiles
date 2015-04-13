@@ -20,6 +20,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 
+Plugin 'itchyny/calendar.vim'
+
 call vundle#end()
 filetype plugin indent on
 " }}}
@@ -109,3 +111,14 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " }}}
+
+" Calendar {{{
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+let g:calendar_week_number = 1
+let g:calendar_first_day = "monday"
+" }}}
+
+if filereadable(glob("~/.vimrc.local")) 
+	source ~/.vimrc.local
+endif
