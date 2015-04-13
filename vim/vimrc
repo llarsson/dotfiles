@@ -1,13 +1,29 @@
-" obvious stuff like pathogen {{{
-filetype off
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+" vundle plugin management {{{
 set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-surround'
+Plugin 'mileszs/ack.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'ervandew/supertab'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'bling/vim-airline'
+
+call vundle#end()
 filetype plugin indent on
-syntax on
-runtime! plugin/sensible.vim
 " }}}
+
+" Obvious settings
+syntax on
 
 " The one true encoding!
 set encoding=utf-8
@@ -76,15 +92,18 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " }}}
 
+" tab key configuration {{{
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
 
-" Since vim is my mail editor, it needs settings!
-autocmd FileType mail call SetMailOptions()
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
-function SetMailOptions()
-    set spell
-    set spelllang=en,sv
-    set textwidth=0
-    " Should not need to set textwidth explicitly, but I do
-    set formatoptions=qawn1
-    " see fm-table for help on the format options above
-endfunction
+let g:SuperTabDefaultCompletionType = '<C-n>'
+" }}}
+
+" ctrlp {{{
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" }}}
