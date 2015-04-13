@@ -1,0 +1,3 @@
+[submodule "desktop/powerline-fonts"]
+	path = desktop/powerline-fonts
+	url = https://github.com/powerline/fonts

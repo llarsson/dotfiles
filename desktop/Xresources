@@ -1,5 +1,6 @@
 ! Use a nice truetype font and size by default... 
-xterm*font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso10646-*
+xterm*font: 7x13
+xterm*faceName: Meslo LG M for Powerline:size=11:antialias=false
 
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
 xterm*loginshell: true
