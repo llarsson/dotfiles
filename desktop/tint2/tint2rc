@@ -28,9 +28,9 @@ border_color = #000000 0
 
 # ID 4
 rounded = 1
-border_width = 1
-background_color = #888888 20
-border_color = #ED2323 60
+border_width = 3
+background_color = #EEEEEE 100
+border_color = #EE4000 100 
 
 # ID 5 - taskbar
 rounded = 0
