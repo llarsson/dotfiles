@@ -1,5 +1,5 @@
 set lines=48
-set guifont=Meslo\ LG\ M\ for\ Powerline\ 10
+set guifont=Meslo\ LG\ M\ for\ Powerline\ 11
 set background=dark
 colorscheme slate
 set guicursor=a:blinkon0
