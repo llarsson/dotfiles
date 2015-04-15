@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-" tpope is incredible
+" tpope is incredible!
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth'
@@ -15,12 +15,16 @@ Plugin 'mileszs/ack.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
-
+Plugin 'Raimondi/delimitMate'
 Plugin 'itchyny/calendar.vim'
+
+" Local plugins that I do not need everywhere
+if filereadable(glob("~/.vimrc.local.plugins")) 
+	source ~/.vimrc.local.plugins
+endif
 
 call vundle#end()
 filetype plugin indent on
