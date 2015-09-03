@@ -1,5 +1,6 @@
 set lines=48
-set guifont=Meslo\ LG\ M\ for\ Powerline\ 11
-set background=dark
-colorscheme slate
+"set guifont=Meslo\ LG\ M\ for\ Powerline\ 11
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+" set background=dark
+" colorscheme base16-ocean
 set guicursor=a:blinkon0

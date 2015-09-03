@@ -11,15 +11,22 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+
+" finding files and contents
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'chriskempson/base16-vim'
+
+" lazy typing (YouCompleteMe is a local plugin, see below)
 Plugin 'ervandew/supertab'
-Plugin 'kien/ctrlp.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
-Plugin 'itchyny/calendar.vim'
+
+" Improve my bottom line
+Plugin 'bling/vim-airline'
+
+" Color scheme that is to blend in with terminal color scheme
+Plugin 'noahfrederick/vim-noctu'
 
 " Local plugins that I do not need everywhere
 if filereadable(glob("~/.vimrc.local.plugins")) 
@@ -68,8 +75,9 @@ let mapleader = "\\"
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.eps,.ps,.pdf,.pyc
 
 " color scheme {{{
+set term=xterm
 set background=dark
-colorscheme base16-ocean
+colorscheme noctu
 " }}}
 
 " Easier to hit keys for start/end of line
@@ -89,6 +97,15 @@ let g:pymode_lint_write = 0
 let g:pymode_syntax_highlight_self = 1
 nnoremap <Leader>pl :PyLint<CR>
 " }}}
+
+" ack.vim settings {{{
+" Ack 2.0 has some -s option that 1.96 (Ubuntu 14.04's version) does not
+let g:ack_default_options = " -H --nocolor --nogroup --column "
+" }}}
+
+" No common words ever have jjj as part of their correct spelling, make it a
+" new Escape
+imap jjj <Esc>
 
 " Jump to definition of a Python thing
 nnoremap <Leader>pj :RopeGotoDefinition<CR>
@@ -116,13 +133,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " }}}
 
-" Calendar {{{
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
-let g:calendar_week_number = 1
-let g:calendar_first_day = "monday"
-" }}}
-
+" additional per-host settings, if any
 if filereadable(glob("~/.vimrc.local")) 
 	source ~/.vimrc.local
 endif
