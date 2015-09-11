@@ -1,63 +1,52 @@
-! Use a nice truetype font and size by default... 
-xterm*font: 7x13
-xterm*faceName: Meslo LG M for Powerline:size=11:antialias=false
+! Xft settings ---------------------------------------------------------------
 
-! Every shell is a login shell by default (for inclusion of all necessary environment variables)
-xterm*loginshell: true
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   none
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
 
-! Generous scrollback
-xterm*savelines: 4096
+! xpdf -----------------------------------------------------------------------
+xpdf*enableFreetype:    yes
+xpdf*antialias:         yes
+xpdf*foreground:        black
+xpdf*background:        white
+xpdf*urlCommand:        /usr/bin/firefox %s
 
-! double-click to select whole URLs :D
-xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+! urxvt settings -------------------------------------------------------------
 
-! I dislike the scrollbar
-xterm*ScrollBar: false
+urxvt*.perl-lib: ~/.urxvt/ext/
+urxvt*.perl-ext-common: default,matcher,clipboard-osc
+urxvt*.perl-matcher: 1
+urxvt*.matcher-button: 3
+urxvt*.url-launcher: /usr/bin/firefox
+urxvt*.matcher.button: 1
+urxvt*.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
-! stop output to terminal from jumping down to bottom of scroll again
-xterm*scrollTtyOutput: false
+urxvt*.letterSpace: -1
+urxvt*.dynamicColors: on
+urxvt*.urgentOnBell: true
 
-! UTF-8 everywhere!
-xterm*utf8: 1
+urxvt*.cursorBlink: false
+urxvt*.cursorUnderline: 0
 
-! I like the bell to be visual
-xterm*visualbell: true
-xterm*bellIsUrgent: true
+urxvt*.saveLines: 4096
+urxvt*.scrollBar: false
+urxvt*.scrollBar_right: true
+urxvt*.scrollBar_floating: true
+urxvt*.scrollstyle: plain
+urxvt*.scrollColor: #efefef
+urxvt*.troughColor: #ffffff
+urxvt*.thickness: 1
 
-! Base16 Twilight (dark)
-! Scheme: David Hart (http://hart-dev.com)
-#define base00 #1e1e1e
-#define base01 #323537
-#define base02 #464b50
-#define base03 #5f5a60
-#define base04 #838184
-#define base05 #a7a7a7
-#define base06 #c3c3c3
-#define base07 #ffffff
-#define base08 #cf6a4c
-#define base09 #cda869
-#define base0A #f9ee98
-#define base0B #8f9d6a
-#define base0C #afc4db
-#define base0D #7587a6
-#define base0E #9b859d
-#define base0F #9b703f
-*.foreground: base05
-*.background: base00
-*.cursorColor: base05
-*.color0: base00
-*.color1: base08
-*.color2: base0B
-*.color3: base0A
-*.color4: base0D
-*.color5: base0E
-*.color6: base0C
-*.color7: base05
-*.color8: base03
-*.color9: base09
-*.color10: base01
-*.color11: base02
-*.color12: base04
-*.color13: base06
-*.color14: base0F
-*.color15: base07
+urxvt*.borderLess: false
+urxvt*.internalBorder: 5
+urxvt*.externalBorder: 0
+
+! urxvt*.font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
+! urxvt*.boldFont: -*-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
+
+urxvt*.font: xft:Ubuntu Mono:size=13:antialias=false
+urxvt*.boldFont: xft:Ubuntu Mono:bold:size=13:antialias=false
+
+#include ".Xresources.colors"
