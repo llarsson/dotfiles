@@ -1,0 +1,2 @@
+	- Make dotfiles manageable using GNU stow, as per: 
+  http://blog.xero.nu/managing_dotfiles_with_gnu_stow
