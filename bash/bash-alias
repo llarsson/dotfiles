@@ -13,4 +13,4 @@ alias vim='vim -X'
 
 alias tmux="TERM=screen-256color tmux"
 
-alias cloudssh='ssh -o StrictHostKeyChecking=false'
+alias cloudssh='ssh -o StrictHostKeyChecking=false -o UserKnownHostsFile=/dev/null -o GlobalKnownHostsFile=/dev/null'
