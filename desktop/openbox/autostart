@@ -20,7 +20,7 @@
 # thunar --daemon &
 
 # My X defaults
-xrdb ~/.Xdefaults &
+xrdb ~/.Xresources &
 
 # A panel with task list and stuff is nice...
 tint2 &

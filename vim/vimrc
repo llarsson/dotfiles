@@ -137,3 +137,4 @@ let g:ctrlp_cmd = 'CtrlP'
 if filereadable(glob("~/.vimrc.local")) 
 	source ~/.vimrc.local
 endif
+

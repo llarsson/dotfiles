@@ -23,7 +23,8 @@ urxvt*.url-launcher: /usr/bin/firefox
 urxvt*.matcher.button: 1
 urxvt*.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
-urxvt*.letterSpace: -1
+! used to be -1
+urxvt*.letterSpace: 0
 urxvt*.dynamicColors: on
 urxvt*.urgentOnBell: true
 
@@ -46,7 +47,9 @@ urxvt*.externalBorder: 0
 ! urxvt*.font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
 ! urxvt*.boldFont: -*-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
 
-urxvt*.font: xft:Ubuntu Mono:size=13:antialias=false
-urxvt*.boldFont: xft:Ubuntu Mono:bold:size=13:antialias=false
+! urxvt*.font: xft:Source Code Pro:size=10:hinting=True:antialias=True:minspace=False,xft:Ubuntu Mono derivate Powerline:size=13:antialias=false
+urxvt*.font: xft:Ubuntu Mono derivative Powerline:size=13:antialias=false
+!urxvt*.boldFont: xft:Source Code Pro:bold:size=10:antialias=false,xft:Ubuntu Mono derivate Powerline:bold:size=13:antialias=false
+urxvt*.boldFont: xft:Ubuntu Mono derivative Powerline:bold:size=13:antialias=false
 
 #include ".Xresources.colors"

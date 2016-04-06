@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function untilfailure {
+  i=0;
+  until ! $@ ; do
+    echo "Iteration: $i"
+    i=$((i+1))
+  done
+}
