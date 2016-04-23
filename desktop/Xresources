@@ -15,6 +15,9 @@ xpdf*urlCommand:        /usr/bin/firefox %s
 
 ! urxvt settings -------------------------------------------------------------
 
+!urxvt*termName: xterm-256color
+urxvt*termName: rxvt-256color
+
 urxvt*.perl-lib: ~/.urxvt/ext/
 urxvt*.perl-ext-common: default,matcher,clipboard-osc
 urxvt*.perl-matcher: 1
@@ -48,8 +51,10 @@ urxvt*.externalBorder: 0
 ! urxvt*.boldFont: -*-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
 
 ! urxvt*.font: xft:Source Code Pro:size=10:hinting=True:antialias=True:minspace=False,xft:Ubuntu Mono derivate Powerline:size=13:antialias=false
-urxvt*.font: xft:Ubuntu Mono derivative Powerline:size=13:antialias=false
+!urxvt*.font: xft:Ubuntu Mono derivative Powerline:size=13:antialias=false
+!urxvt*.font: xft:Sauce Code Pro for Powerline:style=Regular:size=13:antialias=false
+urxvt*.font: xft:Source Code Pro for Powerline-10:hinting=True;antialias:True
 !urxvt*.boldFont: xft:Source Code Pro:bold:size=10:antialias=false,xft:Ubuntu Mono derivate Powerline:bold:size=13:antialias=false
-urxvt*.boldFont: xft:Ubuntu Mono derivative Powerline:bold:size=13:antialias=false
+!urxvt*.boldFont: xft:Ubuntu Mono derivative Powerline:bold:size=13:antialias=false
 
 #include ".Xresources.colors"

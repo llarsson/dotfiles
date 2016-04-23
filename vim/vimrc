@@ -25,8 +25,8 @@ Plugin 'Raimondi/delimitMate'
 " Improve my bottom line
 Plugin 'bling/vim-airline'
 
-" Light color scheme
-Plugin 'vim-scripts/summerfruit256.vim'
+" base16 color schemes
+Plugin 'chriskempson/base16-vim'
 
 " Local plugins that I do not need everywhere
 if filereadable(glob("~/.vimrc.local.plugins")) 
@@ -75,10 +75,13 @@ let mapleader = "\\"
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.eps,.ps,.pdf,.pyc
 
 " color scheme {{{
-set background=light
+set background=dark
 set t_Co=256
-colorscheme summerfruit256
+colorscheme base16-eighties
 " }}}
+
+let g:airline_powerline_fonts = 1
+let g:airline_extensions = []
 
 " Easier to hit keys for start/end of line
 nnoremap H ^
