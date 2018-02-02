@@ -2,7 +2,7 @@
 
 Xft.dpi:                    96
 Xft.antialias:              true
-Xft.rgba:                   none
+Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
 
@@ -17,6 +17,9 @@ xpdf*urlCommand:        /usr/bin/firefox %s
 
 !urxvt*termName: xterm-256color
 urxvt*termName: rxvt-256color
+
+! Honestly no clue, but makes solarized light work in urxvt
+URxvt.intensityStyles: false
 
 urxvt*.perl-lib: ~/.urxvt/ext/
 urxvt*.perl-ext-common: default,matcher,clipboard-osc
@@ -34,7 +37,7 @@ urxvt*.urgentOnBell: true
 urxvt*.cursorBlink: false
 urxvt*.cursorUnderline: 0
 
-urxvt*.saveLines: 4096
+urxvt*.saveLines: 8192
 urxvt*.scrollBar: false
 urxvt*.scrollBar_right: true
 urxvt*.scrollBar_floating: true
@@ -47,14 +50,27 @@ urxvt*.borderLess: false
 urxvt*.internalBorder: 5
 urxvt*.externalBorder: 0
 
-! urxvt*.font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
-! urxvt*.boldFont: -*-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
+!urxvt*.font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
+!urxvt*.boldFont: -*-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
 
 ! urxvt*.font: xft:Source Code Pro:size=10:hinting=True:antialias=True:minspace=False,xft:Ubuntu Mono derivate Powerline:size=13:antialias=false
-urxvt*.font: xft:Ubuntu Mono derivative Powerline:size=11:antialias=false
+!urxvt*.font: xft:Ubuntu Mono derivative Powerline:size=13:antialias=false
 !urxvt*.font: xft:Sauce Code Pro for Powerline:style=Regular:size=13:antialias=false
-!urxvt*.font: xft:Source Code Pro for Powerline-10:hinting=True;antialias:True
+urxvt*.font: xft:Source Code Pro for Powerline-10:hinting=False;antialias:False
 !urxvt*.boldFont: xft:Source Code Pro:bold:size=10:antialias=false,xft:Ubuntu Mono derivate Powerline:bold:size=13:antialias=false
-urxvt*.boldFont: xft:Ubuntu Mono derivative Powerline:bold:size=11:antialias=false
+!urxvt*.boldFont: xft:Ubuntu Mono derivative Powerline:bold:size=13:antialias=false
+
+
+! XTerm
+xterm*locale: true
+xterm*utf8: 1
+xterm*termName: xterm-256color
+xterm*saveLines: 8192
+!xterm*faceName: Ubuntu Mono derivative Powerline:size=11:antialias=false
+!xterm*boldFont: Ubuntu Mono derivative Powerline:size=11:bold:antialias=false
+xterm*faceName: Sauce Code Powerline:size=10:antialias=false
+xterm*boldFont: Sauce Code Powerline:size=10:bold:antialias=false
+xterm*bellIsUrgent: true
+xterm*borderWidth: 0
 
 #include ".Xresources.colors"
