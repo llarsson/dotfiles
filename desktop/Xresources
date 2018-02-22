@@ -16,39 +16,39 @@ xpdf*urlCommand:        /usr/bin/firefox %s
 ! urxvt settings -------------------------------------------------------------
 
 !urxvt*termName: xterm-256color
-urxvt*termName: rxvt-256color
+URxvt*termName: rxvt-256color
 
 ! Honestly no clue, but makes solarized light work in urxvt
 URxvt.intensityStyles: false
 
-urxvt*.perl-lib: ~/.urxvt/ext/
-urxvt*.perl-ext-common: default,matcher,clipboard-osc
-urxvt*.perl-matcher: 1
-urxvt*.matcher-button: 3
-urxvt*.url-launcher: /usr/bin/firefox
-urxvt*.matcher.button: 1
-urxvt*.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt*.perl-lib: ~/.urxvt/ext/
+URxvt*.perl-ext-common: default,matcher,clipboard-osc
+URxvt*.perl-matcher: 1
+URxvt*.matcher-button: 3
+URxvt*.url-launcher: /usr/bin/firefox
+URxvt*.matcher.button: 1
+URxvt*.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
 ! used to be -1
-urxvt*.letterSpace: 0
-urxvt*.dynamicColors: on
-urxvt*.urgentOnBell: true
+URxvt*.letterSpace: 0
+URxvt*.dynamicColors: on
+URxvt*.urgentOnBell: true
 
-urxvt*.cursorBlink: false
-urxvt*.cursorUnderline: 0
+URxvt*.cursorBlink: false
+URxvt*.cursorUnderline: 0
 
-urxvt*.saveLines: 8192
-urxvt*.scrollBar: false
-urxvt*.scrollBar_right: true
-urxvt*.scrollBar_floating: true
-urxvt*.scrollstyle: plain
-urxvt*.scrollColor: #efefef
-urxvt*.troughColor: #ffffff
-urxvt*.thickness: 1
+URxvt*.saveLines: 8192
+URxvt*.scrollBar: false
+URxvt*.scrollBar_right: true
+URxvt*.scrollBar_floating: true
+URxvt*.scrollstyle: plain
+URxvt*.scrollColor: #efefef
+URxvt*.troughColor: #ffffff
+URxvt*.thickness: 1
 
-urxvt*.borderLess: false
-urxvt*.internalBorder: 5
-urxvt*.externalBorder: 0
+URxvt*.borderLess: false
+URxvt*.internalBorder: 5
+URxvt*.externalBorder: 0
 
 !urxvt*.font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
 !urxvt*.boldFont: -*-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
@@ -56,21 +56,21 @@ urxvt*.externalBorder: 0
 ! urxvt*.font: xft:Source Code Pro:size=10:hinting=True:antialias=True:minspace=False,xft:Ubuntu Mono derivate Powerline:size=13:antialias=false
 !urxvt*.font: xft:Ubuntu Mono derivative Powerline:size=13:antialias=false
 !urxvt*.font: xft:Sauce Code Pro for Powerline:style=Regular:size=13:antialias=false
-urxvt*.font: xft:Source Code Pro for Powerline-10:hinting=False;antialias:False
+URxvt*.font: xft:Source Code Pro for Powerline-10:hinting=False;antialias:False
 !urxvt*.boldFont: xft:Source Code Pro:bold:size=10:antialias=false,xft:Ubuntu Mono derivate Powerline:bold:size=13:antialias=false
 !urxvt*.boldFont: xft:Ubuntu Mono derivative Powerline:bold:size=13:antialias=false
 
 
 ! XTerm
-xterm*locale: true
-xterm*utf8: 1
-xterm*termName: xterm-256color
-xterm*saveLines: 8192
-!xterm*faceName: Ubuntu Mono derivative Powerline:size=11:antialias=false
-!xterm*boldFont: Ubuntu Mono derivative Powerline:size=11:bold:antialias=false
-xterm*faceName: Sauce Code Powerline:size=10:antialias=false
-xterm*boldFont: Sauce Code Powerline:size=10:bold:antialias=false
-xterm*bellIsUrgent: true
-xterm*borderWidth: 0
+XTerm*locale: true
+XTerm*utf8: 1
+XTerm*termName: xterm-256color
+XTerm*saveLines: 8192
+!XTerm*faceName: Ubuntu Mono derivative Powerline:size=11:antialias=false
+!XTerm*boldFont: Ubuntu Mono derivative Powerline:size=11:bold:antialias=false
+XTerm*faceName: Sauce Code Powerline:size=10:antialias=false
+XTerm*boldFont: Sauce Code Powerline:size=10:bold:antialias=false
+XTerm*bellIsUrgent: true
+XTerm*borderWidth: 0
 
 #include ".Xresources.colors"
