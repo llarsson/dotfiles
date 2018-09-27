@@ -3,30 +3,37 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'gmarik/Vundle.vim'
-" tpope is incredible!
+
+" sensible defaults by tpope
 Plugin 'tpope/vim-sensible'
+
+" the git plugin by tpope
 Plugin 'tpope/vim-fugitive'
+
+" figure out good settings based on filetypes
 Plugin 'tpope/vim-sleuth'
+
+" easily surround text with markers, such as curly braces
 Plugin 'tpope/vim-surround'
+
+" to make e.g. surrounds (see above) work with the repeat ('.') command
 Plugin 'tpope/vim-repeat'
 
 " finding files and contents
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 
-" lazy typing (YouCompleteMe is a local plugin, see below)
+" make Tab work really well
 Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+
+" automatically add matching closing delimiters, such as parentheses
 Plugin 'Raimondi/delimitMate'
 
-" Improve my bottom line
+" much improved status bar
 Plugin 'bling/vim-airline'
 
 " color scheme
-" Plugin 'chriskempson/base16-vim'
 Plugin 'altercation/vim-colors-solarized'
 
 " Local plugins that I do not need everywhere
@@ -37,6 +44,7 @@ endif
 call vundle#end()
 filetype plugin indent on
 " }}}
+
 
 " Obvious settings
 syntax on
@@ -69,16 +77,15 @@ set autowrite
 " I only like particular folds, so only ones that I have asked for
 set foldmethod=marker
 
-" Glorious leader
-let mapleader = "\\"
+" since I switch between layouts, the ',' is a good choice for leader
+let mapleader = ","
 
 " Don't suggest the following when looking for files to open
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.eps,.ps,.pdf,.pyc
 
 " color scheme {{{
-set background=light
+set background=dark
 set t_Co=256
-" colorscheme base16-eighties
 colorscheme solarized
 " }}}
 
@@ -100,12 +107,6 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 
-" PyLint settings {{{
-let g:pymode_lint_write = 0
-let g:pymode_syntax_highlight_self = 1
-nnoremap <Leader>pl :PyLint<CR>
-" }}}
-
 " ack.vim settings {{{
 " Ack 2.0 has some -s option that 1.96 (Ubuntu 14.04's version) does not
 let g:ack_default_options = " -H --nocolor --nogroup --column "
@@ -115,9 +116,6 @@ let g:ack_default_options = " -H --nocolor --nogroup --column "
 " new Escape
 imap jjj <Esc>
 
-" Jump to definition of a Python thing
-nnoremap <Leader>pj :RopeGotoDefinition<CR>
-
 " Change active split {{{
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -125,16 +123,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " }}}
 
-" tab key configuration {{{
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
-
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-
+" SuperTab should act like Ctrl-n
 let g:SuperTabDefaultCompletionType = '<C-n>'
-" }}}
 
 " ctrlp {{{
 let g:ctrlp_map = '<c-p>'
