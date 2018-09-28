@@ -11,7 +11,7 @@ function exitstatus {
     OFF="\[\033[m\]"
 
     #PROMPT="[\u@\h ${BLUE}\W${OFF}"
-    PROMPT="\n${BOLD}\d \t :: \w${OFF}\n${GREEN}\u@\h \W${OFF} \$ "
+    PROMPT="\n${BOLD}\d \t :: \w${OFF}\n${GREEN}\u@\h \W${OFF}$(__git_ps1) \$ "
 
     if [ "${EXITSTATUS}" -eq 0 ]
     then
