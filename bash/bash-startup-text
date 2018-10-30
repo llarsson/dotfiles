@@ -1,8 +1,12 @@
 # Display a fortune cookie if we are running interactively
 if [ -n "$PS1" ]; then
-    fortune
+    if which fortune; then
+        fortune
+    fi
     echo 
     echo ================================
     echo 
-    pal -r 7 -x 14
+    if which pal; then 
+        pal -r 7 -x 14
+    fi
 fi
