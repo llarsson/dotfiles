@@ -99,6 +99,9 @@ set laststatus=2
 nnoremap H ^
 nnoremap L $
 
+" Grepping like a pro
+nnoremap <Leader>g :Ack!<Space>
+
 " Persistent undo files should not clutter our directories
 set undodir=~/.vim/undo
 
