@@ -86,6 +86,9 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 " color scheme {{{
 set background=dark
 set t_Co=256
+" for some reason, the below makes spelling errors show up
+" https://github.com/altercation/vim-colors-solarized/issues/195
+set t_Cs=
 colorscheme solarized
 " }}}
 
