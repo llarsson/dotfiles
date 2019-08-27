@@ -44,7 +44,7 @@ client.urgent             $red     $inactive_border   $white   $black
 for_window [class=".*"] border normal 5
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec --no-startup-id x-terminal-emulator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -63,6 +63,10 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
+# move windows between outputs
+bindsym $mod+Control+h move container to output left
+bindsym $mod+Control+l move container to output right
 
 # split in horizontal orientation
 bindsym $mod+b split h
@@ -162,11 +166,8 @@ bindsym XF86AudioMicMute exec "amixer sset Capture toggle"
 
 # Print screen via scrot
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
-
-# xrandr for ambrosia
-# NOTE: Needs to run before i3bar, because of evaluation order
-# https://github.com/i3/i3/issues/1883
-# exec ~/bin/ambrosia-displays.sh
+bindsym Shift+Print exec "scrot -u -e 'mv $f ~/Pictures/screenshots/'"
+bindsym Control+Print exec "scrot -s -e 'mv $f ~/Pictures/screenshots/'"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -187,25 +188,26 @@ bar {
 # exec xmodmap -e 'pointer = 3 2 1'
 
 # caps sucks, escape rocks
-exec setxkbmap -option caps:escape 
+# exec setxkbmap -option caps:escape 
+# Superseded by the line below
 
 # screen locking
-bindsym $mod+Pause --release exec --no-startup-id "~/.i3/screenlocking/lock.sh"
+bindsym $mod+Pause --release exec --no-startup-id "~/.config/i3/screenlocking/lock.sh"
 
-exec xautolock -time 15 -locker '~/.i3/screenlocking/lock.sh' &
+exec --no-startup-id "xautolock -time 15 -locker '~/.config/i3/screenlocking/lock.sh'"
 
-exec xrdb ~/.Xresources &
+exec --no-startup-id "xrdb ~/.Xresources"
 
 # Switch between Swedish and US International by pressing both shifts 
-#exec setxkbmap -option grp:switch,grp:shift_toggle,grp_led:scroll us,se -variant 'altgr-intl,' -option nodeadkeys -option caps:escape -option "lv3:ralt_switch" &
+exec --no-startup-id "setxkbmap -option grp:switch,grp:shift_toggle,grp_led:scroll us,se -variant 'altgr-intl,' -option nodeadkeys -option caps:escape -option 'lv3:ralt_switch'"
 
 # need some settings from gnome
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
-exec --no-startup-id unity-settings-daemon
-exec --no-startup-id gnome-keyring-deamon &
+exec --no-startup-id "/usr/lib/gnome-settings-daemon/gnome-settings-daemon"
+exec --no-startup-id "unity-settings-daemon"
+exec --no-startup-id "gnome-keyring-deamon"
 
 # warm display colors
-exec --no-startup-id redshift-gtk &
+exec --no-startup-id "redshift-gtk"
 
 # compositing display
-exec compton -CGb 
+exec "compton -CGb"
