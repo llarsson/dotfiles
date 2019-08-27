@@ -34,7 +34,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'bling/vim-airline'
 
 " color scheme
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 
 " Local plugins that I do not need everywhere
 if filereadable(glob("~/.vimrc.local.plugins")) 
@@ -88,8 +89,8 @@ set background=dark
 set t_Co=256
 " for some reason, the below makes spelling errors show up
 " https://github.com/altercation/vim-colors-solarized/issues/195
-set t_Cs=
-colorscheme solarized
+" set t_Cs=
+colorscheme base16-mocha
 " }}}
 
 " airline {{{
@@ -129,6 +130,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " }}}
 
+" More natural split ordering {{{
+set splitbelow
+set splitright
+" }}}
+
 " SuperTab should act like Ctrl-n
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
@@ -136,6 +142,14 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " }}}
+
+" Have Vim jump to the last position when reopening a file
+if has("autocmd")
+     :au BufReadPost *
+	 \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+	 \ |   exe "normal! g`\""
+	 \ | endif
+endif
 
 " additional per-host settings, if any
 if filereadable(glob("~/.vimrc.local")) 
