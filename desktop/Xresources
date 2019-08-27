@@ -62,15 +62,15 @@ URxvt*.font: xft:Source Code Pro for Powerline-10:hinting=False;antialias:False
 
 
 ! XTerm
-XTerm*locale: true
-XTerm*utf8: 1
-XTerm*termName: xterm-256color
-XTerm*saveLines: 8192
+xterm*locale: true
+xterm*utf8: 1
+xterm*termName: xterm-256color
+xterm*saveLines: 8192
 !XTerm*faceName: Ubuntu Mono derivative Powerline:size=11:antialias=false
 !XTerm*boldFont: Ubuntu Mono derivative Powerline:size=11:bold:antialias=false
-XTerm*faceName: Sauce Code Powerline:size=10:antialias=false
-XTerm*boldFont: Sauce Code Powerline:size=10:bold:antialias=false
-XTerm*bellIsUrgent: true
-XTerm*borderWidth: 0
+xterm*faceName: Sauce Code Powerline:size=10:antialias=false
+xterm*boldFont: Sauce Code Powerline:size=10:bold:antialias=false
+xterm*bellIsUrgent: true
+xterm*borderWidth: 0
 
 #include ".Xresources.colors"
