@@ -151,6 +151,9 @@ if has("autocmd")
 	 \ | endif
 endif
 
+" I love narrow tabs for all source code
+set tabstop=2
+
 " additional per-host settings, if any
 if filereadable(glob("~/.vimrc.local")) 
 	source ~/.vimrc.local
