@@ -1,3 +1,15 @@
+# How to get Docker via VirtualBox on MacOS
+# 
+# $ brew install docker docker-machine$ brew cask install virtualbox
+# -> will need sudo and a System Preference setting
+# $ docker-machine create --driver virtualbox docker
+# $ eval "$(docker-machine env docker)"
+# $ docker run hello-world
+# $ docker-machine stop default
+# 
+# Then, the functions below let you toggle your Docker VM and configure
+# the docker CLI tool
+
 if [ $(uname) == 'Darwin' ]; then 
   function enable_docker() {
   	VM="${DOCKER_VM:-docker}"
