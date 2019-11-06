@@ -1,0 +1,15 @@
+function enable_docker() {
+	VM="${DOCKER_VM:-docker}"
+	if [[ "$(docker-machine status ${VM})" != "Running" ]] ; then
+		docker-machine start ${VM}
+	fi
+
+	eval "$(docker-machine env ${VM})"
+}
+
+function disable_docker() {
+	VM="${DOCKER_VM:-docker}"
+	if [[ "$(docker-machine status ${VM})" == "Running" ]] ; then
+		docker-machine stop ${VM}
+	fi
+}
