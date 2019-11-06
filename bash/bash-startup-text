@@ -2,11 +2,8 @@
 if [ -n "$PS1" ]; then
     if which fortune; then
         fortune
-    fi
-    echo 
-    echo ================================
-    echo 
-    if which pal; then 
-        pal -r 7 -x 14
+        echo 
+        echo ================================
+        echo 
     fi
 fi
