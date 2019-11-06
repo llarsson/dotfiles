@@ -35,7 +35,8 @@ Plugin 'bling/vim-airline'
 
 " color scheme
 "Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
+"Plugin 'chriskempson/base16-vim'
+Plugin 'ajh17/Spacegray.vim'
 
 " Local plugins that I do not need everywhere
 if filereadable(glob("~/.vimrc.local.plugins")) 
@@ -90,7 +91,7 @@ set t_Co=256
 " for some reason, the below makes spelling errors show up
 " https://github.com/altercation/vim-colors-solarized/issues/195
 " set t_Cs=
-colorscheme base16-mocha
+colorscheme spacegray
 " }}}
 
 " airline {{{
