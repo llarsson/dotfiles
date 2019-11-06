@@ -13,10 +13,12 @@ export LC_PAPER="sv_SE.${locale_suffix}"
 export LC_MONETARY="sv_SE.${locale_suffix}"
 export LC_CTYPE="sv_SE.${locale_suffix}"
 export LC_NUMERIC="sv_SE.${locale_suffix}"
-export LC_TIME="sv_SE.${locale_suffix}"
 export LC_COLLATE="sv_SE.${locale_suffix}"
 export LC_MEASUREMENT="sv_SE.${locale_suffix}"
 export LC_TELEPHONE="sv_SE.${locale_suffix}"
 export LC_NAME="sv_SE.${locale_suffix}"
 export LC_ADDRESS="sv_SE.${locale_suffix}"
 export LC_IDENTIFICATION="sv_SE.${locale_suffix}"
+
+# ...but not for dates and times, instead use Great Britain's format
+export LC_TIME="en_GB.${locale_suffix}"
