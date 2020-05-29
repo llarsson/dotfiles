@@ -1,3 +1,7 @@
+# vi editing!
+set editing-mode vi
+set show-mode-in-prompt on
+
 # Up and down arrows to search through history with the prefix of whatever
 # has already been typed at the prompt.
 "\e[A": history-search-backward
@@ -10,3 +14,4 @@ set mark-directories on
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 set visible-stats on
+
