@@ -36,7 +36,11 @@ Plugin 'bling/vim-airline'
 " color scheme
 "Plugin 'altercation/vim-colors-solarized'
 "Plugin 'chriskempson/base16-vim'
-Plugin 'ajh17/Spacegray.vim'
+" Plugin 'ajh17/Spacegray.vim'
+
+" indentLine for nice indentation support when desperately needed (yaml)
+Plugin 'Yggdroot/indentLine'
+
 
 " Local plugins that I do not need everywhere
 if filereadable(glob("~/.vimrc.local.plugins")) 
@@ -168,9 +172,13 @@ set tabstop=2
 set list
 set listchars=trail:·,tab:»·
 
-" add yaml stuffs
+" add YAML stuff
+let g:indentLine_char = '⦙'
+let g:indentLine_enabled = 0
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml IndentLinesEnable
+
 
 " additional per-host settings, if any
 if filereadable(glob("~/.vimrc.local"))
