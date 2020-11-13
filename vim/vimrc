@@ -90,7 +90,6 @@ set t_Co=256
 " for some reason, the below makes spelling errors show up
 " https://github.com/altercation/vim-colors-solarized/issues/195
 " set t_Cs=
-colorscheme macvim
 " }}}
 
 " airline {{{
@@ -165,8 +164,13 @@ endif
 " I love narrow tabs for all source code
 set tabstop=2
 
+" listchars
+set list
+set listchars=trail:·,tab:»·
+
+
 " additional per-host settings, if any
-if filereadable(glob("~/.vimrc.local")) 
+if filereadable(glob("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
 
