@@ -16,9 +16,9 @@ function exitstatus {
 
     if [ "${EXITSTATUS}" -eq 0 ]
     then
-       PS1="${PROMPT}"
+       PS1=" ${PROMPT}"
     else
-       PS1="${BOLD}${RED}exit code :: ${EXITSTATUS}${OFF}${PROMPT}"
+       PS1=" [${BOLD}${RED}${EXITSTATUS}${OFF}] ${PROMPT}"
     fi
 
     PS2="${BOLD}>${OFF} "
