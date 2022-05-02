@@ -11,7 +11,8 @@ function exitstatus {
     OFF="\[\033[m\]"
 
     #PROMPT="[\u@\h ${BLUE}\W${OFF}"
-    PROMPT="\n${BOLD}\d \t :: \w${OFF}\n${GREEN}\u@\h \W${OFF}$(__git_ps1) \$ "
+    #PROMPT="\n${BOLD}\d \t :: \w${OFF}\n${GREEN}\u@\h \W${OFF}$(__git_ps1) \$ "
+    PROMPT="\[\033[38;5;10m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;6m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\] \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/') \\$ \[$(tput sgr0)\]"
 
     if [ "${EXITSTATUS}" -eq 0 ]
     then
@@ -24,5 +25,3 @@ function exitstatus {
 }
 
 PROMPT_COMMAND=exitstatus
-
-#export PS1='\n\[\033[01;36m\]\d \t :: \w\[\033[00m\]\n\[\033[01;32m\]\u@\h \W\[\033[00m\] $ '
