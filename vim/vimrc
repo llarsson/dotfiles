@@ -57,8 +57,10 @@ syntax on
 " The one true encoding!
 set encoding=utf-8
 
-" Typically, I want spell checking on
-set spell
+" Code is really difficult to read when you have spell checking on,
+" so let's disable it by default and turn it back on for files where
+" we need it
+set nospell
 
 " Always work with logical lines, rather than screen lines
 set linebreak
@@ -91,9 +93,6 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 " color scheme {{{
 set background=dark
 set t_Co=256
-" for some reason, the below makes spelling errors show up
-" https://github.com/altercation/vim-colors-solarized/issues/195
-" set t_Cs=
 " }}}
 
 " airline {{{
@@ -165,8 +164,11 @@ if has("autocmd")
 	 \ | endif
 endif
 
-" I love narrow tabs for all source code
+" Indentation settings
 set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 " listchars
 set list
@@ -176,13 +178,10 @@ set listchars=trail:·,tab:»·
 let g:indentLine_char = '⦙'
 let g:indentLine_enabled = 0
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml IndentLinesEnable
-
+autocmd FileType markdown,text,tex,latex set spell
 
 " additional per-host settings, if any
 if filereadable(glob("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
-
-
