@@ -1,53 +1,53 @@
-" vundle plugin management {{{
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+
+" plugin management {{{
+
+" First, auto installation of the plugin manager
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'gmarik/Vundle.vim'
 
 " sensible defaults by tpope
-Plugin 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 
 " the git plugin by tpope
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " figure out good settings based on filetypes
-Plugin 'tpope/vim-sleuth'
+Plug 'tpope/vim-sleuth'
 
 " easily surround text with markers, such as curly braces
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " to make e.g. surrounds (see above) work with the repeat ('.') command
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 
 " finding files and contents
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 
 " make Tab work really well
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 
 " automatically add matching closing delimiters, such as parentheses
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 
 " much improved status bar
-Plugin 'bling/vim-airline'
-
-" color scheme
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'chriskempson/base16-vim'
-" Plugin 'ajh17/Spacegray.vim'
+Plug 'bling/vim-airline'
 
 " indentLine for nice indentation support when desperately needed (yaml)
-Plugin 'Yggdroot/indentLine'
-
+Plug 'Yggdroot/indentLine'
 
 " Local plugins that I do not need everywhere
 if filereadable(glob("~/.vimrc.local.plugins")) 
 	source ~/.vimrc.local.plugins
 endif
-
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 " }}}
 
