@@ -1,9 +1,0 @@
-# Display a fortune cookie if we are running interactively
-if [ -n "$PS1" ]; then
-    if which fortune; then
-        fortune
-        echo 
-        echo ================================
-        echo 
-    fi
-fi

@@ -1,8 +1,0 @@
-# ignore .svn directories while tab-completing
-export FIGNORE=.svn
-
-# Add all unknown files in a directory to SVN
-alias svn-add-unknown='svn st | grep ^\? | cut -c8- | xargs svn add'
-
-# Remove all locally deleted files in a directory from SVN
-alias svn-remove-deleted='svn st | grep ^\! | cut -c8- | xargs svn rm --force'

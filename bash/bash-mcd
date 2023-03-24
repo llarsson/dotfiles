@@ -1,9 +1,0 @@
-# change to directory (and create it if it does not exist)
-mcd () {
-    if [ -d $1 ]; then
-        cd $1
-    else
-        mkdir -p $1 && cd $1
-    fi
-}
-

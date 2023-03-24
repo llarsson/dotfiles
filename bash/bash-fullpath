@@ -1,8 +1,0 @@
-# fullpath of file(s)
-fullpath() {
-    while [ $# -ne 0 ]; do
-        ls -1 $(pwd)/"$1"
-        shift
-    done
-}
-
