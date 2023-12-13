@@ -3,25 +3,30 @@
 
 function exitstatus {
 
-    EXITSTATUS="$?"
-    BOLD="\[\033[1m\]"
-    RED="\[\033[1;31m\]"
-    GREEN="\[\e[32;1m\]"
-    BLUE="\[\e[34;1m\]"
-    OFF="\[\033[m\]"
+   EXITSTATUS="$?"
 
-    #PROMPT="[\u@\h ${BLUE}\W${OFF}"
-    #PROMPT="\n${BOLD}\d \t :: \w${OFF}\n${GREEN}\u@\h \W${OFF}$(__git_ps1) \$ "
-    PROMPT="\[\033[38;5;10m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;6m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\] \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/') \\$ \[$(tput sgr0)\]"
+   BOLD="\[\033[1m\]"
+   RED="\[\033[1;31m\]"
+   GREEN="\[\e[32;1m\]"
+   BLUE="\[\e[34;1m\]"
+   OFF="\[\033[m\]"
 
-    if [ "${EXITSTATUS}" -eq 0 ]
-    then
-       PS1=" ${PROMPT}"
-    else
-       PS1=" [${BOLD}${RED}${EXITSTATUS}${OFF}] ${PROMPT}"
-    fi
+   TIMESTAMP=$(date +%H:%M:%S)
+   GITBRANCH=$(__git_ps1 '(%s)')
+   GITBRANCH=" ${GITBRANCH}"
+   KUBECONTEXT=$(kubectl config current-context 2>/dev/null)
+   KUBECONTEXT=" ${KUBECONTEXT}"
 
-    PS2="${BOLD}>${OFF} "
+   PROMPT="${TIMESTAMP} ${BOLD}${BLUE}\w${OFF}${GITBRANCH}${BOLD}${GREEN}${KUBECONTEXT}${OFF} $ "
+
+   if [ "${EXITSTATUS}" -eq 0 ]
+   then
+      PS1=" ${PROMPT}"
+   else
+      PS1=" [${BOLD}${RED}${EXITSTATUS}${OFF}] ${PROMPT}"
+   fi
+
+   PS2="${BOLD}>${OFF} "
 }
 
 PROMPT_COMMAND=exitstatus
